@@ -1,0 +1,37 @@
+[
+    {
+        "intrebare": "Ce instrument este folosit pentru tăierea lemnului?",
+        "variante": ["Ciocan", "Ferăstrău", "Șurubelniță", "Pensulă"],
+        "corect": 1
+    },
+    {
+        "intrebare": "Care este scopul unei mașini de găurit?",
+        "variante": ["Găurirea pereților", "Lipirea pieselor", "Tăierea metalului", "Șlefuirea suprafețelor"],
+        "corect": 0
+    },
+    {
+        "intrebare": "Cum se numește procesul de unire a două piese de lemn folosind un șurub?",
+        "variante": ["Lipire", "Îmbinare", "Șurubare", "Vopsire"],
+        "corect": 2
+    },
+    {
+        "intrebare": "Ce tip de vopsea este recomandată pentru vopsirea suprafețelor din metal?",
+        "variante": ["Vopsea acrilică", "Vopsea pe bază de apă", "Vopsea specială pentru metal", "Vopsea de apă"],
+        "corect": 2
+    },
+    {
+        "intrebare": "Ce unelte sunt necesare pentru instalarea unui raft pe perete?",
+        "variante": ["Ciocan și șurubelniță", "Ferăstrău și pistol de lipit", "Mașină de găurit și nivel de apă", "Vopsitor și pensulă"],
+        "corect": 2
+    },
+    {
+        "intrebare": "Care este utilizarea principală a unui slefuitor orbital?",
+        "variante": ["Șlefuirea lemnului", "Tăierea metalului", "Găurirea betonului", "Montarea plăcilor ceramice"],
+        "corect": 0
+    },
+    {
+        "intrebare": "Ce tip de adeziv este cel mai potrivit pentru fixarea plăcilor ceramice pe perete?",
+        "variante": ["Adeziv pentru lemn", "Adeziv pentru metal", "Adeziv pentru ceramică", "Adeziv universali"],
+        "corect": 2
+    }
+]

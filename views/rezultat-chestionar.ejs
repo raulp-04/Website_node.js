@@ -1,0 +1,13 @@
+<h2>Răspunsurile tale:</h2>
+<ul>
+    <% Object.entries(raspunsuri).forEach(([cheie, valoare], index) => { %>
+        <li>
+            <strong><%= cheie %></strong>:
+             <% if (valoare == corect[index]) { %>
+                 corect 
+            <% } else { %> gresit <% } %>
+        </li>
+    <% }); %>
+</ul>
+
+<a href="/chestionar">Înapoi la chestionar</a>
