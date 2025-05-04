@@ -20,20 +20,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // proprietățile obiectului Response - res - https://expressjs.com/en/api.html#res
 app.get('/', (req, res) => res.send('Hello World'));
 
-
-const rawData = fs.readFileSync('./intrebari.json');
-const listaIntrebari = JSON.parse(rawData);
-const raspCorecte = listaIntrebari.map(item => item.corect)
 // la accesarea din browser adresei http://localhost:6789/chestionar se va apela funcția specificată
-app.get('/chestionar', (req, res) => {    
-    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-    res.render('chestionar', {intrebari: listaIntrebari});
+app.get('/chestionar', (req, res) => {   
+    fs.readFile('intrebari.json', (err, data) => {
+        if (err) throw err;
+        const listaIntrebari = JSON.parse(data);
+        const raspCorecte = listaIntrebari.map(item => item.corect);
+        res.render('chestionar', {intrebari: listaIntrebari});
+    });
 });
 app.post('/rezultat-chestionar', (req, res) => {
-    const raspuns = req.body;
-    Object.entries(raspuns).forEach(([cheie, valoare], index) => {
-       console.log(`${index}-{${cheie}, ${valoare}}, ${raspCorecte[index]}`); 
+    fs.readFile('intrebari.json', (err, data) => {
+        if (err) throw err;
+        const listaIntrebari = JSON.parse(data);
+        const raspCorecte = listaIntrebari.map(item => item.corect);
+        const raspuns = req.body;
+        res.render('rezultat-chestionar', { layout: 'layout', titlu: 'Rezultate', raspunsuri: raspuns , corect: raspCorecte});
     });
-    res.render('rezultat-chestionar', { layout: 'layout', titlu: 'Rezultate', raspunsuri: raspuns , corect: raspCorecte});
 });
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port}/`));
