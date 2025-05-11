@@ -2,10 +2,27 @@
 <html lang="RO-ro">
     <head>
         <meta charset="UTF-8">
-        <title>Briconaj</title>
+        <title>Bricolaj</title>
+        <link rel="stylesheet" href="./style.css">
     </head>
 
     <body>
+        <header>
+            <nav>
+                <a href="/">Acasă</a>
+                <a href="/chestionar">Chestionar</a>
+                <% if (username) { %>
+                <a class="conectat">Bun venit, <%= username %>!
+                    
+                    <form action="/logout" method="POST" style="display:inline;">
+                        <button type="submit">Logout</button>
+                    </form>
+                </a> 
+                <% } else { %>
+                    <a href="/autentificare">Autentificare</a>
+                <% } %>
+            </nav>
+        </header>
         <main>
             <%- body %>
         </main>

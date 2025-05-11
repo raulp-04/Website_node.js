@@ -1,8 +1,8 @@
-<h1>Chestionar despre briconaj</h1>
+<h1>Chestionar despre bricolaj</h1>
 <form action="/rezultat-chestionar" method="post">
     <% intrebari.forEach((intrebare, index) => { %>
         <div>
-            <p><%= index+1%>. <%= intrebare.intrebare %></p>
+            <h4><%= index+1%>. <%= intrebare.intrebare %></h4>
             <% intrebare.variante.forEach((varianta, vIndex) => { %>
                 <label>
                     <input type="radio" name="Intrebarea <%= index+1 %>" value="<%= vIndex %>" required>

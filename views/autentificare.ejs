@@ -1,0 +1,10 @@
+<% if(error != '') {%>
+    <p><%=error%></p>
+<% } %>
+<form action="/verificare-autentificare" method="post">
+    <label>Utilizator</label><br>
+        <input type="text" placeholder="nume" name="user" autofocus><br>
+    <label>Parola</label><br>
+        <input type="password" placeholder="parola" name="pass"><br>
+    <input type="submit" value="Logare">
+</form>
