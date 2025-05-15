@@ -34,6 +34,26 @@ nav a:hover{
     font-size: 30px;
     margin:auto;
 }
+
+.index_btn {
+    border: 1px solid rgb(85, 85, 186);
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    transition-duration: 0.4s;
+}
+.index_btn:hover {
+    background-color: rgb(85, 85, 186);
+}
+
+.div_magazin{
+    margin: 5px;
+    transition-duration: 0.4s;
+}
+.div_magazin:hover{
+    background-color: rgb(85, 85, 186);
+}
+
 footer {
     background-color: black;
     position: fixed;

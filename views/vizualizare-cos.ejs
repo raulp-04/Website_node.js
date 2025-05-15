@@ -1,0 +1,20 @@
+<% if (username) { %>
+    <% if (isOk === true) { %> 
+        <% if (cos.length === 0) { %>
+            <p>Coșul de cumpărături este gol.</p>
+        <% } else { %>
+            <% cos.forEach(prod => { %> 
+                <div class="div_magazin">
+                    <%= prod.id %> |
+                    <%= prod.nume %> |
+                    <%= prod.pret.toFixed(2) %> lei |
+                    <%= prod.stoc %> buc.
+                </div>
+            <% }); %>
+        <% } %>
+    <% } else { %>
+        <p>Eroare la citirea din baza de date</p>
+    <% } %>
+<% } else { %>
+    <p>Trebuie să fii autentificat pentru a putea vedea coșul de cumpărături!</p>
+<% } %>
