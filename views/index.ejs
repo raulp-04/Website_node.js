@@ -1,25 +1,28 @@
-<form action="/creare_bd" method="get">
-    <button class="index_btn">Creare BD</button>
-</form>
-<form action="/inserare_bd" method="get">
-    <button class="index_btn">Inserare BD</button>
-</form>
+<h1>Magazin</h1>
 <hr>
-
-<!--Trebuie cumva sa fac fiecare produs separat, nu intr-un tabel-->
-<% if(isOk==true){ produse.forEach(prod => { %> 
-    <form action="/adaugare_cos" method="post">
-        <div class="div_magazin">
-            <%= prod.id %> |
-            <%= prod.nume %> |
-            <%= prod.pret.toFixed(2) %> lei |
-            <%= prod.stoc %> buc. |
-            <% if(username) { %>
-                <input type="hidden" name="id" value="<%= prod.id %>">
-                <button class="index_btn">Adaugare in cos</button>
-            <% } %>
-        </div>
+<% if(role == "ADMIN") { %>
+    <form action="/creare_bd" method="get" style="display: inline;">
+        <button class="index_btn">Creare BD</button>
     </form>
-<% });} else { %>
-    <p>Eroare la citirea din baza de date</p>
+    <form action="/inserare_bd" method="get" style="display: inline;">
+        <button class="index_btn">Inserare BD</button>
+    </form>
 <% } %>
+
+<div class="container" style="color: black;">
+    <% if(isOk==true){ produse.forEach(prod => { %> 
+        <form action="/adaugare_cos" method="post" style="display: flex;">
+            <div class="div_magazin">
+                <%= prod.nume %> |
+                <%= prod.pret.toFixed(2) %> lei |
+                <%= prod.stoc %> buc. 
+                <% if(username) { %>
+                    <input type="hidden" name="id" value="<%= prod.id %>">
+                    <button class="index_btn">Adaugare in cos</button>
+                <% } %>
+            </div>
+        </form>
+    <% });} else { %>
+        <p>Eroare la citirea din baza de date</p>
+    <% } %>
+</div>

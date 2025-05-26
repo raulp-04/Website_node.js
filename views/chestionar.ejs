@@ -1,15 +1,17 @@
-<h1>Chestionar despre bricolaj</h1>
-<form action="/rezultat-chestionar" method="post">
-    <% intrebari.forEach((intrebare, index) => { %>
-        <div>
-            <h4><%= index+1%>. <%= intrebare.intrebare %></h4>
-            <% intrebare.variante.forEach((varianta, vIndex) => { %>
-                <label>
-                    <input type="radio" name="Intrebarea <%= index+1 %>" value="<%= vIndex %>" required>
-                    <%= varianta %> 
-                </label><br>
-            <% }); %>
-        </div>
-    <% }); %>
-    <input type="submit">
-</form>
+<h1>Chestionar despre bricolaj</h1><hr>
+<div class="container_cos">
+    <form action="/rezultat-chestionar" method="post">
+        <% intrebari.forEach((intrebare, index) => { %>
+            <div>
+                <h4><%= index+1%>. <%= intrebare.intrebare %></h4>
+                <% intrebare.variante.forEach((varianta, vIndex) => { %>
+                    <label>
+                        <input type="radio" name="Intrebarea <%= index+1 %>" value="<%= vIndex %>" required>
+                        <%= varianta %> 
+                    </label><br>
+                <% }); %>
+            </div>
+        <% }); %>
+        <input type="submit">
+    </form>
+</div>

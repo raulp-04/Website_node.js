@@ -1,6 +1,9 @@
 body {
-    background-color: lightblue;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
+    color: white;
     margin: 0;
     padding: 0;
 }
@@ -12,16 +15,18 @@ header {
     position: fixed;
     width: 100%;
     top: 0%;
+    color: black;
 }
 nav {
     font-size: 50px;
     font-weight: bold;
 }
 nav a {
+    color: black;
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
-    color: black;
+
 }
 nav a:hover{
     color: rgb(118, 118, 118);
@@ -36,22 +41,77 @@ nav a:hover{
 }
 
 .index_btn {
-    border: 1px solid rgb(85, 85, 186);
+    border: 1px solid rgb(114, 149, 161); 
     color: black;
     padding: 5px;
     margin: 5px;
     transition-duration: 0.4s;
 }
 .index_btn:hover {
-    background-color: rgb(85, 85, 186);
+    background-color: rgb(114, 149, 161); 
 }
 
-.div_magazin{
-    margin: 5px;
+.div_magazin {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
     transition-duration: 0.4s;
+    width: 100%; /* ocupă toată coloana */
 }
-.div_magazin:hover{
-    background-color: rgb(85, 85, 186);
+.div_magazin:hover {
+    background-color: rgb(114, 149, 161); 
+    color: white;
+}
+
+.container_cos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: black;
+}
+li {
+    text-align: center;
+}
+.div_cos {
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.div_cos:hover {
+    background-color: #e0e0e0;
+    cursor: default;
+}
+
+.div_cos:last-child {
+    font-weight: bold;
+    background-color: #dbe9ff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* coloane responsive */
+    gap: 20px; /* spațiu între divuri */
+    justify-items: center; /* centrează divurile în coloanele lor */
+    padding: 20px;
 }
 
 footer {
@@ -62,6 +122,9 @@ footer {
     color: white;
     margin: 0px;
     padding: 20px;
+}
+input[type=submit]{
+    margin-top: 5px;
 }
 main{
     margin-top: 100px;

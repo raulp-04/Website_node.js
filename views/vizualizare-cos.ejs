@@ -1,16 +1,24 @@
+<h1>Cosul dumneavoastra</h1><hr>
 <% if (username) { %>
     <% if (isOk === true) { %> 
         <% if (cos.length === 0) { %>
-            <p>Coșul de cumpărături este gol.</p>
+            <p><div class="container_cos">Coșul de cumpărături este gol.</div></p>
         <% } else { %>
+            <div class="container_cos" >
             <% cos.forEach(prod => { %> 
-                <div class="div_magazin">
-                    <%= prod.id %> |
+                <div class="div_cos">
                     <%= prod.nume %> |
-                    <%= prod.pret.toFixed(2) %> lei |
-                    <%= prod.stoc %> buc.
+                    <%= prod.pret.toFixed(2) %> lei
+                    <form action="/sterge_cos" method="post">
+                        <input type="hidden" name="ID" value="<%= prod.id %>">
+                        <button type="submit">Sterge</button>
+                    </form>
                 </div>
             <% }); %>
+            <div class="div_cos">
+                Suma totala = <%= suma.toFixed(2) %> lei
+            </div>
+            </div>
         <% } %>
     <% } else { %>
         <p>Eroare la citirea din baza de date</p>

@@ -1,14 +1,12 @@
 [
     {
         "username": "Raul",
-        "password": "pass"
+        "role": "USER",
+        "password": "Raul"
     },
     {
         "username": "Parasca",
-        "password": "pass"
-    },
-    {
-        "username": "Admin",
-        "password": "pass"
+        "role": "ADMIN",
+        "password": "Parasca"
     }
 ]

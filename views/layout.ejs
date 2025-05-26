@@ -13,6 +13,9 @@
                 <a href="/chestionar">Chestionar</a>
                 <% if (username) { %>
                 <a href="/vizualizare-cos">Cosul</a>
+                <% if (role == 'ADMIN') { %>
+                    <a href="/admin">Admin</a>
+                <% } %>
                 <a class="conectat">Bun venit, <%= username %>!
                     
                     <form action="/logout" method="POST" style="display:inline;">

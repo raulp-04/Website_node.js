@@ -1,13 +1,14 @@
-<h1>Răspunsurile tale:</h1>
-<ul>
-    <% Object.entries(raspunsuri).forEach(([cheie, valoare], index) => { %>
-        <li>
-            <strong><%= cheie %></strong>:
-             <% if (valoare == corect[index]) { %>
-                 corect 
-            <% } else { %> gresit <% } %>
-        </li>
-    <% }); %>
-</ul>
-
-<a href="/chestionar">Înapoi la chestionar</a>
+<h1>Răspunsurile tale:</h1><hr>
+<div class="container_cos   ">
+    <ul style="padding-left: 0px;">
+        <% Object.entries(raspunsuri).forEach(([cheie, valoare], index) => { %>
+            <li>
+                <strong><%= cheie %></strong>:
+                <% if (valoare == corect[index]) { %>
+                    corect 
+                <% } else { %> gresit <% } %>
+            </li>
+        <% }); %>
+        </ul>            
+        <a href="/chestionar">Înapoi la chestionar</a>
+</div>
